@@ -1,0 +1,22 @@
+<html>
+    
+<body>
+    <style type="text/css" media="all">
+        body{
+            text-align: center;
+            color: white;
+            background-color: green;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+         var lim=20000000,i,j,k,num=4,a=1,b=-1;
+         for(i=3;i<=lim;i +=2){
+            a =a*b;
+            k=a*i;
+             num+=(4/k);
+               //document.write(k+", ");
+         }
+         document.write("The value of PI is: "+num);
+    </script>
+</body>
+</html>
