@@ -1,0 +1,91 @@
+<html>
+<body>
+<h1> Welcome to CRAZY Calculator</h1>
+<h2>Divide two numbers</h2>
+	Enter 1<sup>st</sup> number: <input type="number" id="a"><br><br>
+	Enter 2<sup>nd</sup> number: <input type="number" id="b"><br><br>
+	Enter decimal limit: <input type="number" id="limit"><br><br>
+	<input type="button" value="Get Result" onclick="doit()"><br><br>
+	<!--root section-->
+	<h2>Find out squre-root value</h2>
+	Enter a number: <input type="number" id="r"><br><br>
+	Enter decimal limit: <input type="number" id="range"><br><br>
+	<input type="button" value="Get result" onclick="dothat()">
+<style>
+body{
+text-align:center;
+font-size: 20px;
+}
+input[type="number"]{
+	text-align: center;
+	font-size: 19px;
+	width: 100px;
+
+}
+</style>
+<script>
+	function doit(){
+var a,b,s=1,limit,res,rem,dis;
+a=document.getElementById('a').value;
+b=document.getElementById('b').value;
+limit=document.getElementById('limit').value;
+if(a==0||b==0||limit==0){
+	alert("Fill up every fields carefully ! ");
+}
+else{
+res=Math.floor(a/b);
+dis=res;
+rem=a%b;
+document.write("First number :"+a+'<br>'+"Second number :"+b+'<br>'+"Limit :"+limit+" digits after decimal"+'<br>'+"Result is :"+res);
+if(rem!=0){
+document.write(".");
+}
+else{
+document.write("   [No digits available after decimal]");
+}
+while(s<=limit){
+if(rem==0){
+document.write("   [No more digits available]");
+break;
+}
+res=Math.floor((rem*10)/b);
+rem=(rem*10)%b;
+document.write(res);
+s++;
+}
+}
+}
+function dothat(){
+var a,b,s=1,limit,res,rem,dis;
+a=document.getElementById('r').value;
+limit=document.getElementById('range').value;
+if(a==0||limit==0){
+	alert("Fill up every fields carefully !");
+}
+else{
+b = Math.sqrt(a);
+res=Math.floor(a/b);
+dis=res;
+rem=a%b;
+document.write("Entered number :"+a+'<br>'+"Limit :"+limit+" digits after decimal"+'<br>'+"Square-root of "+a+" is :"+res);
+if(rem!=0){
+document.write(".");
+}
+else{
+document.write("   [No digits available after decimal]");
+}
+while(s<=limit){
+if(rem==0){
+document.write("   [No more digits available]");
+break;
+}
+res=Math.floor((rem*10)/b);
+rem=(rem*10)%b;
+document.write(res);
+s++;
+}
+}
+}
+</script>
+</body>
+</html>
